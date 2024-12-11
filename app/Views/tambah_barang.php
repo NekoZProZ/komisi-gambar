@@ -29,7 +29,7 @@
                             <form class="form-horizontal" method="post" enctype="multipart/form-data" action="<?=base_url('home/aksi_tambah_barang')?>">
                                 <div class="card-body">
                                     <h4 class="card-title">Tambah</h4>
-                                    <div class="form-group row">
+                                    <!-- <div class="form-group row">
                                         <label for="fname" class="col-sm-3 text-right control-label col-form-label">Nama Barang</label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control" id="fname" name="nama">
@@ -40,12 +40,21 @@
                                         <div class="col-sm-9">
                                             <input type="number" class="form-control" id="lname" name="har">
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="form-group row">
                                         <label for="lname" class="col-sm-3 text-right control-label col-form-label">Deskripsi</label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control" id="lname" name="des">
                                         </div>
+                                    </div>
+                                    <div class="form-group row">
+                                    <label for="lname" class="col-sm-3 text-right control-label col-form-label">Jenis Gambar - Harga</label>
+                                    <select class="select2 form-control custom-select" style="width: 100%; height:36px;" name="jenis">
+                                    <?php foreach ($clara as $nelson ) { ?>
+                                            <option value="<?= $nelson->id_jenis ?>"><?= $nelson->nama_jenis ?> - <?= $nelson->harga ?></option>
+                                            <!-- <option value="2">Pembeli</option> -->
+                                    <?php } ?>
+                                    </select>
                                     </div>
                                     
                                     

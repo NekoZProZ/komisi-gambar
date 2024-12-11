@@ -4,7 +4,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Data User</h4>
+                        <h4 class="page-title">Detail</h4>
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
@@ -31,35 +31,65 @@
                         
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Data Barang</h5>
+                                <h5 class="card-title">Detail Pesanan</h5>
                                 <div class="table-responsive">
-                                
-                                    <table id="zero_config" class="table table-striped table-bordered">
-                                        <thead>
+                                <!-- <a href="<?= base_url('home/tambah_masy')?>">
+                                          <button type="button" class="btn btn-success m-2">Tambah</button>
+                                          </a> -->
+                                    <table  class="table table-striped table-bordered">
+                                        <!-- <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Nama Barang</th>
-                                                <th>Tanggal</th>
-                                                <th>User</th>
-                                                <th>Harga</th>
-                                                
+                                                <th>Nama</th>
+                                                <th>Username</th>
+                                                <th>Nomor Telepon</th>
+                                                <th>Aksi</th>
                                             </tr>
-                                        </thead>
+                                        </thead> -->
                                         <tbody>
-                                        <?php
-      $no=1;
-      foreach ($clara as $nelson ) {
-?>
-                                            <tr>
-                                        <th scope="row"><?= $no++ ?></th>
-                                        <td><?= $nelson->nama_barang ?></td>
-                                        <td><?= $nelson->tgl_lelang ?></td>
-                                        <td><?= $nelson->nama_lengkap ?></td>
-                                        <td><?= $nelson->penawaran_harga ?></td>
                                         
-                                    </tr>
-                                    <?php } ?>
-                                            
+                                        <tr>
+                                        <td>Kode Pesanan</td>
+                                        <td><?= $clara->kode_pesan ?></td>
+                                        </tr>
+
+                                        <tr>
+                                        <td>Tanggal</td>
+                                        <td><?= $clara->tgl ?></td>
+                                        </tr>
+
+                                        <tr>
+                                        <td>Jenis Pesanan</td>
+                                        <td><?= $clara->nama_jenis ?></td>
+                                        </tr>
+
+                                        <tr>
+                                        <td>Harga</td>
+                                        <td><?= $clara->harga ?></td>
+                                        </tr>
+
+                                        <tr>
+                                        <td>Deskripsi</td>
+                                        <td><?= $clara->deskripsi ?></td>
+                                        </tr>
+
+                                        <tr>
+                                        <td>Username</td>
+                                        <td><?= $clara->username ?></td>
+                                        </tr>
+
+                                        <tr>
+                                        <td>Status</td>
+                                        <td><?= $clara->status ?></td>
+                                        </tr>
+
+                                        <?php if(session()->get('level')==1){ ?>
+                                        <tr>
+                                        <td>Gambar</td>
+                                        <td><img src="<?= base_url('komisi/'.$clara->gambar)?>" class="light-logo" style="width: 200px;" /></td>
+                                        </tr>
+                                        <?php } ?>
+                                                                                    
                                         </tbody>
                                         
                                     </table>
